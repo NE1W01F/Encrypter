@@ -11,6 +11,16 @@ namespace Encrypter
         public Form1()
         {
             InitializeComponent();
+            string username = Environment.UserName;
+            if (File.Exists("C:\\Users\\" + username + "\\AppData\\accept.txt"))
+            {
+
+            }
+            else
+            {
+                Form3 f2 = new Form3();
+                f2.ShowDialog();
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)

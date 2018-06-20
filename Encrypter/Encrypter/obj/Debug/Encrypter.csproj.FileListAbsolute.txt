@@ -19,3 +19,4 @@ C:\Users\Wolf\Desktop\Encrypter\Encrypter\obj\Debug\Encrypter.csproj.CoreCompile
 C:\Users\Wolf\Desktop\Encrypter\Encrypter\obj\Debug\Encrypter.exe
 C:\Users\Wolf\Desktop\Encrypter\Encrypter\obj\Debug\Encrypter.pdb
 C:\Users\Wolf\Desktop\Encrypter\Encrypter\obj\Debug\Encrypter.Form2.resources
+C:\Users\Wolf\Desktop\Encrypter\Encrypter\obj\Debug\Encrypter.Form3.resources
