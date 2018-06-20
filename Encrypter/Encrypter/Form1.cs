@@ -23,7 +23,7 @@ namespace Encrypter
 
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e) // Encrypter
         {
             if (textBox1.Text == textBox1.Text + ".cry")
             {
@@ -43,8 +43,8 @@ namespace Encrypter
                 RijndaelManaged RMCrypto = new RijndaelManaged();
 
                 CryptoStream cs = new CryptoStream(fsCrypt,
-                    RMCrypto.CreateEncryptor(key, key),
-                    CryptoStreamMode.Write);
+                   RMCrypto.CreateEncryptor(key, key),
+                   CryptoStreamMode.Write);
 
                 FileStream fsIn = new FileStream(inputFile, FileMode.Open);
 
@@ -62,35 +62,42 @@ namespace Encrypter
         }
 
 
-        private void button3_Click(object sender, EventArgs e)
+        private void button3_Click(object sender, EventArgs e) // Decrypter
         {
             string inputFile = textBox1.Text;
             string outputFile = "Decrypted" + textBox4.Text;
             string password = textBox2.Text;
             if (File.Exists(textBox1.Text))
             {
-                UnicodeEncoding UE = new UnicodeEncoding();
-                byte[] key = UE.GetBytes(password);
+                try
+                {
+                    UnicodeEncoding UE = new UnicodeEncoding();
+                    byte[] key = UE.GetBytes(password);
 
-                FileStream fsCrypt = new FileStream(inputFile, FileMode.Open);
+                    FileStream fsCrypt = new FileStream(inputFile, FileMode.Open);
 
-                RijndaelManaged RMCrypto = new RijndaelManaged();
+                    RijndaelManaged RMCrypto = new RijndaelManaged();
 
-                CryptoStream cs = new CryptoStream(fsCrypt,
-                    RMCrypto.CreateDecryptor(key, key),
-                    CryptoStreamMode.Read);
+                    CryptoStream cs = new CryptoStream(fsCrypt,
+                        RMCrypto.CreateDecryptor(key, key),
+                        CryptoStreamMode.Read);
 
-                FileStream fsOut = new FileStream(outputFile, FileMode.Create);
+                    FileStream fsOut = new FileStream(outputFile, FileMode.Create);
 
-                int data;
-                while ((data = cs.ReadByte()) != -1)
-                    fsOut.WriteByte((byte)data);
+                    int data;
+                    while ((data = cs.ReadByte()) != -1)
+                        fsOut.WriteByte((byte)data);
 
-                fsOut.Close();
-                cs.Close();
-                fsCrypt.Close();
-                File.Delete(textBox1.Text);
-                MessageBox.Show("Your file has been decrypted.", "Encrypter", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    fsOut.Close();
+                    cs.Close();
+                    fsCrypt.Close();
+                    File.Delete(textBox1.Text);
+                    MessageBox.Show("Your file has been decrypted.", "Encrypter", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch
+                {
+                    MessageBox.Show("The password is not right for that file.", "Encrypter", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
             else
             {

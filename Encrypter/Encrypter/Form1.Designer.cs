@@ -170,9 +170,9 @@ namespace Encrypter
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(177, 48);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(209, 13);
+            this.label8.Size = new System.Drawing.Size(211, 13);
             this.label8.TabIndex = 18;
-            this.label8.Text = "only enter this in  if you are decrypting a file";
+            this.label8.Text = "Only enter this in  if you are decrypting a file";
             // 
             // Form1
             // 
