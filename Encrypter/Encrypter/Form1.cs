@@ -33,16 +33,72 @@ namespace Encrypter
 
         }
 
-        private void button2_Click(object sender, EventArgs e) // Encrypter
+
+        private void button3_Click(object sender, System.EventArgs e) // Decrypter
         {
-            if (textBox1.Text == textBox1.Text + ".cry")
+            OpenFileDialog openFileDialog1 = new OpenFileDialog();
+            openFileDialog1.Title = "Select a File";
+            openFileDialog1.Filter = "Encrypted Files|*.cry";
+            if (openFileDialog1.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
-                MessageBox.Show("You can't encrypt a file that has already been encrypted.", "Encrypter", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                string username = Environment.UserName;
+                string file1 = openFileDialog1.FileName;
+                string inputFile = file1;
+                string outputFile = "C:\\users\\" + username + "\\desktop\\decrypted" + textBox4.Text;
+                string password = textBox2.Text;
+                try
+                {
+                    UnicodeEncoding UE = new UnicodeEncoding();
+                    byte[] key = UE.GetBytes(password);
+
+                    FileStream fsCrypt = new FileStream(inputFile, FileMode.Open);
+
+                    RijndaelManaged RMCrypto = new RijndaelManaged();
+
+                    CryptoStream cs = new CryptoStream(fsCrypt,
+                       RMCrypto.CreateDecryptor(key, key),
+                       CryptoStreamMode.Read);
+
+                    FileStream fsOut = new FileStream(outputFile, FileMode.Create);
+
+                    int data;
+                    while ((data = cs.ReadByte()) != -1)
+                        fsOut.WriteByte((byte)data);
+
+                    fsOut.Close();
+                    cs.Close();
+                    fsCrypt.Close();
+                    MessageBox.Show("Your file has been decrypted.", "Encrypter", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    File.Delete(file1);
+                }
+                catch
+                {
+                   MessageBox.Show("The password is not right for that file.", "Encrypter", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
-            else
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Form2 f2 = new Form2();
+            f2.ShowDialog();
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button5_Click(object sender, System.EventArgs e) // Encrypter
+        {
+            OpenFileDialog openFileDialog1 = new OpenFileDialog();
+            openFileDialog1.Title = "Select a File";
+            if (openFileDialog1.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
-                string inputFile = textBox1.Text;
-                string outputFile = "Encrypted" + ".cry";
+                string file1 = openFileDialog1.FileName;
+
+                string inputFile = openFileDialog1.FileName;
+                string outputFile = openFileDialog1.FileName + ".cry";
                 string password = textBox2.Text;
                 UnicodeEncoding UE = new UnicodeEncoding();
                 byte[] key = UE.GetBytes(password);
@@ -66,64 +122,9 @@ namespace Encrypter
                 fsIn.Close();
                 cs.Close();
                 fsCrypt.Close();
-                File.Delete(textBox1.Text);
                 MessageBox.Show("Your file is now encrypted. Note: hide you password somewhere safe", "Encrypter", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                File.Delete(file1);
             }
-        }
-
-
-        private void button3_Click(object sender, EventArgs e) // Decrypter
-        {
-            string inputFile = textBox1.Text;
-            string outputFile = "Decrypted" + textBox4.Text;
-            string password = textBox2.Text;
-            if (File.Exists(textBox1.Text))
-            {
-                try
-                {
-                    UnicodeEncoding UE = new UnicodeEncoding();
-                    byte[] key = UE.GetBytes(password);
-
-                    FileStream fsCrypt = new FileStream(inputFile, FileMode.Open);
-
-                    RijndaelManaged RMCrypto = new RijndaelManaged();
-
-                    CryptoStream cs = new CryptoStream(fsCrypt,
-                        RMCrypto.CreateDecryptor(key, key),
-                        CryptoStreamMode.Read);
-
-                    FileStream fsOut = new FileStream(outputFile, FileMode.Create);
-
-                    int data;
-                    while ((data = cs.ReadByte()) != -1)
-                        fsOut.WriteByte((byte)data);
-
-                    fsOut.Close();
-                    cs.Close();
-                    fsCrypt.Close();
-                    File.Delete(textBox1.Text);
-                    MessageBox.Show("Your file has been decrypted.", "Encrypter", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                catch
-                {
-                    MessageBox.Show("The password is not right for that file.", "Encrypter", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-            else
-            {
-                MessageBox.Show("File " + textBox1.Text + " does not exists", "Encrypter", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-            Form2 f2 = new Form2();
-            f2.ShowDialog();
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

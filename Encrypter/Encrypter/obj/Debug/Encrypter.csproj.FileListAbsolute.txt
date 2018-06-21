@@ -25,5 +25,3 @@ C:\Users\Wolf\Desktop\Encrypter\Encrypter\bin\Debug\Encrypter.application
 C:\Users\Wolf\Desktop\Encrypter\Encrypter\obj\Debug\Encrypter.TrustInfo.xml
 C:\Users\Wolf\Desktop\Encrypter\Encrypter\obj\Debug\Encrypter.exe.manifest
 C:\Users\Wolf\Desktop\Encrypter\Encrypter\obj\Debug\Encrypter.application
-C:\Users\Wolf\Desktop\Encrypter\Encrypter\bin\Debug\Encrypter.exe.CodeAnalysisLog.xml
-C:\Users\Wolf\Desktop\Encrypter\Encrypter\bin\Debug\Encrypter.exe.lastcodeanalysissucceeded
