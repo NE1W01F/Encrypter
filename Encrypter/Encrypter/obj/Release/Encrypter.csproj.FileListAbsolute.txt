@@ -1,0 +1,17 @@
+C:\Users\Wolf\Desktop\Encrypter\Encrypter\bin\Release\Encrypter.exe.config
+C:\Users\Wolf\Desktop\Encrypter\Encrypter\bin\Release\Encrypter.exe.manifest
+C:\Users\Wolf\Desktop\Encrypter\Encrypter\bin\Release\Encrypter.application
+C:\Users\Wolf\Desktop\Encrypter\Encrypter\bin\Release\Encrypter.exe
+C:\Users\Wolf\Desktop\Encrypter\Encrypter\bin\Release\Encrypter.pdb
+C:\Users\Wolf\Desktop\Encrypter\Encrypter\obj\Release\Encrypter.csprojAssemblyReference.cache
+C:\Users\Wolf\Desktop\Encrypter\Encrypter\obj\Release\Encrypter.Form1.resources
+C:\Users\Wolf\Desktop\Encrypter\Encrypter\obj\Release\Encrypter.Form2.resources
+C:\Users\Wolf\Desktop\Encrypter\Encrypter\obj\Release\Encrypter.Form3.resources
+C:\Users\Wolf\Desktop\Encrypter\Encrypter\obj\Release\Encrypter.Properties.Resources.resources
+C:\Users\Wolf\Desktop\Encrypter\Encrypter\obj\Release\Encrypter.csproj.GenerateResource.cache
+C:\Users\Wolf\Desktop\Encrypter\Encrypter\obj\Release\Encrypter.csproj.CoreCompileInputs.cache
+C:\Users\Wolf\Desktop\Encrypter\Encrypter\obj\Release\Encrypter.TrustInfo.xml
+C:\Users\Wolf\Desktop\Encrypter\Encrypter\obj\Release\Encrypter.exe.manifest
+C:\Users\Wolf\Desktop\Encrypter\Encrypter\obj\Release\Encrypter.application
+C:\Users\Wolf\Desktop\Encrypter\Encrypter\obj\Release\Encrypter.exe
+C:\Users\Wolf\Desktop\Encrypter\Encrypter\obj\Release\Encrypter.pdb
