@@ -3,6 +3,7 @@ using Encrypter.Core.Service;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.IO;
+using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
 
@@ -39,9 +40,11 @@ namespace Enctypter.Test
         {
             foreach (var file in Directory.GetFiles(@"..\..\Files\"))
             {
-                if (!file.EndsWith("TestFile.txt", StringComparison.OrdinalIgnoreCase) || 
-                    !file.EndsWith("TextFile1.txt.cry", StringComparison.OrdinalIgnoreCase) || 
-                    file.Contains("Decrypted"))
+                if (!new bool[]{
+                    file.EndsWith("TestFile.txt", StringComparison.OrdinalIgnoreCase) ,
+                    file.EndsWith("TestFile1.txt.cry", StringComparison.OrdinalIgnoreCase),
+                    file.Contains("Decrypted")
+                }.Any(x => x.Equals(true)))
                 {
                     File.Delete(file);
                 }
