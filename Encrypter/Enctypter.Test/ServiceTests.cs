@@ -39,7 +39,9 @@ namespace Enctypter.Test
         {
             foreach (var file in Directory.GetFiles(@"..\..\Files\"))
             {
-                if (!file.EndsWith("TestFile.txt") || file.Contains("Decrypted"))
+                if (!file.EndsWith("TestFile.txt", StringComparison.OrdinalIgnoreCase) || 
+                    !file.EndsWith("TextFile1.txt.cry", StringComparison.OrdinalIgnoreCase) || 
+                    file.Contains("Decrypted"))
                 {
                     File.Delete(file);
                 }

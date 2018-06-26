@@ -42,16 +42,12 @@ namespace Encrypter.Core.Service
             byte[] key = new UnicodeEncoding().GetBytes(_encryptionDTO.Password);
 
             using (FileStream fileStreamInput = new FileStream(_encryptionDTO.InputFileName, FileMode.Open))
+            using (CryptoStream cryptoStream = new CryptoStream(fileStreamInput, new RijndaelManaged().CreateDecryptor(key, key), CryptoStreamMode.Read))
+            using (FileStream fileStreamOutput = new FileStream(_encryptionDTO.OutputFileName, FileMode.Create))
             {
-                RijndaelManaged RMCrypto = new RijndaelManaged();
-
-                using (CryptoStream cryptoStream = new CryptoStream(fileStreamInput, RMCrypto.CreateDecryptor(key, key), CryptoStreamMode.Read))
-                using (FileStream fileStreamOutput = new FileStream(_encryptionDTO.OutputFileName, FileMode.Create))
-                {
-                    int data;
-                    while ((data = cryptoStream.ReadByte()) != -1)
-                        fileStreamOutput.WriteByte((byte)data);
-                }
+                int data;
+                while ((data = cryptoStream.ReadByte()) != -1)
+                    fileStreamOutput.WriteByte((byte)data);
             }
             return true;
         }
@@ -64,12 +60,12 @@ namespace Encrypter.Core.Service
         {
             byte[] key = new UnicodeEncoding().GetBytes(_encryptionDTO.Password);
 
-            using (FileStream fsCrypt = new FileStream(_encryptionDTO.OutputFileName, FileMode.Create))
-            using (CryptoStream cryptoStream = new CryptoStream(fsCrypt, new RijndaelManaged().CreateEncryptor(key, key), CryptoStreamMode.Write))
-            using (FileStream fileStream = new FileStream(_encryptionDTO.InputFileName, FileMode.Open))
+            using (FileStream fileStreamInput = new FileStream(_encryptionDTO.OutputFileName, FileMode.Create))
+            using (CryptoStream cryptoStream = new CryptoStream(fileStreamInput, new RijndaelManaged().CreateEncryptor(key, key), CryptoStreamMode.Write))
+            using (FileStream fileStreamOutput = new FileStream(_encryptionDTO.InputFileName, FileMode.Open))
             {
                 int data;
-                while ((data = fileStream.ReadByte()) != -1)
+                while ((data = fileStreamOutput.ReadByte()) != -1)
                     cryptoStream.WriteByte((byte)data);
             }
             return true;
