@@ -18,16 +18,17 @@ there are lods of other programs for other OS.
 - Now checks if the file exists
 - Now checks the password is right
 - Error when encrypting and decrypting files
+- Decrypting error fixed (thanks to Adam Baker)
 
 # Bugs
 
-- Can't get the it to decrypt the file without having to enter file type
-- Trying to get rid of the file extension textbox but having problems doing that
+- Needs to delete encrypted file after decryption
 
 # New Thing
 - Added EULA
 - Added Icon
 - Bottons that open a file selector
+- DLL (thanks to Adam Baker)
 
 # Made by NE1W01F
 I am a basic Windows devloper trying to get a foot in IT
@@ -38,3 +39,6 @@ Please note that i ant that good as i have only just started
 learning C# 4 weeks a go. I prefer to work with a team as i
 can learn off them and get better at programming and making
 software.
+
+# Peope who helped
+Adam Baker (https://github.com/ABaker86)
