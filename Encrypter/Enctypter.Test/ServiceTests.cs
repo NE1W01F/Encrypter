@@ -4,8 +4,6 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.IO;
 using System.Linq;
-using System.Security.Cryptography;
-using System.Text;
 
 namespace Enctypter.Test
 {
@@ -23,7 +21,7 @@ namespace Enctypter.Test
                 UserName = "FooBar",
                 Password = "12345678",
                 InputFileName = @"..\..\Files\TestFile.txt",
-                OutputFileName = @"..\..\Files\OutTestFile.txt.cry"
+                OutputFileName = @"..\..\Files\TestFile.txt.cry"
             };
         }
 
@@ -41,10 +39,10 @@ namespace Enctypter.Test
             foreach (var file in Directory.GetFiles(@"..\..\Files\"))
             {
                 if (!new bool[]{
-                    file.EndsWith("TestFile.txt", StringComparison.OrdinalIgnoreCase) ,
-                    file.EndsWith("TestFile1.txt.cry", StringComparison.OrdinalIgnoreCase),
-                    file.Contains("Decrypted")
-                }.Any(x => x.Equals(true)))
+                    Path.GetFileName(file).Equals("TestFile.txt", StringComparison.OrdinalIgnoreCase),
+                    Path.GetFileName(file).Equals("TestFile1.txt.cry", StringComparison.OrdinalIgnoreCase)
+                }.Any(x => x.Equals(true))
+                )
                 {
                     File.Delete(file);
                 }
@@ -69,9 +67,9 @@ namespace Enctypter.Test
 
             var inputString = File.ReadAllText(_dto.InputFileName);
             var encryptString = File.ReadAllText(_dto.OutputFileName);
-            
-            _dto.InputFileName = @"..\..\Files\OutTestFile.txt.cry";
-            _dto.OutputFileName = @"..\..\Files\DecryptedTestFile.txt";
+
+            _dto.InputFileName = @"..\..\Files\TestFile.txt.cry";
+            _dto.OutputFileName = @"..\..\Files\TestFile.txt";
 
             bool decryptResult = new EncryptionService(_dto).Decrypt();
 
@@ -81,10 +79,10 @@ namespace Enctypter.Test
             var decryptString = File.ReadAllText(_dto.OutputFileName);
 
             Assert.AreEqual(
-                expected: inputString, 
+                expected: inputString,
                 actual: decryptString);
         }
-        
+
         [DataTestMethod]
         [DataRow("", "", "", "")]
         [DataRow("Foo", "", "", "")]
@@ -108,5 +106,6 @@ namespace Enctypter.Test
                 OutputFileName = outputFile
             });
         }
+
     }
 }

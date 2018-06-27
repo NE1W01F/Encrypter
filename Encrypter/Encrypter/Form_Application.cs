@@ -48,7 +48,7 @@ namespace Encrypter
                         UserName = applicationUser,
                         Password = txtPassword.Text,
                         InputFileName = openFileDialog.FileName,
-                        OutputFileName = $"C:\\users\\{applicationUser}\\desktop\\{txtFileType.Text}"
+                        OutputFileName = openFileDialog.FileName.Replace(".cry", string.Empty)
                     }).Decrypt();
                 }
                 catch(Exception exception)
@@ -78,7 +78,7 @@ namespace Encrypter
                         UserName = Environment.UserName,
                         Password = txtPassword.Text,
                         InputFileName = openFileDialog.FileName,
-                        OutputFileName = openFileDialog.FileName + ".cry"
+                        OutputFileName = $"{openFileDialog.FileName}.cry"
                     }).Encrypt();
                     
                 }

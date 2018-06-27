@@ -59,7 +59,7 @@ namespace Encrypter.Core.Service
         public bool Encrypt()
         {
             byte[] key = new UnicodeEncoding().GetBytes(_encryptionDTO.Password);
-
+            
             using (FileStream fileStreamInput = new FileStream(_encryptionDTO.OutputFileName, FileMode.Create))
             using (CryptoStream cryptoStream = new CryptoStream(fileStreamInput, new RijndaelManaged().CreateEncryptor(key, key), CryptoStreamMode.Write))
             using (FileStream fileStreamOutput = new FileStream(_encryptionDTO.InputFileName, FileMode.Open))
@@ -70,5 +70,7 @@ namespace Encrypter.Core.Service
             }
             return true;
         }
+
+       
     }
 }
