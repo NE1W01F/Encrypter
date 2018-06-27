@@ -19,10 +19,11 @@ there are lods of other programs for other OS.
 - Now checks the password is right
 - Error when encrypting and decrypting files
 - Decrypting error fixed (thanks to Adam Baker)
+- Delete's encrypted file after decryption.
 
 # Bugs
 
-- Needs to delete encrypted file after decryption
+- There are no bugs at the moment. :)
 
 # New Thing
 - Added EULA
