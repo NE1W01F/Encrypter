@@ -50,6 +50,7 @@ namespace Encrypter
                         InputFileName = openFileDialog.FileName,
                         OutputFileName = openFileDialog.FileName.Replace(".cry", string.Empty)
                     }).Decrypt();
+                    File.Delete(openFileDialog);
                 }
                 catch(Exception exception)
                 {
