@@ -1,5 +1,5 @@
 # Encrypter
-Is a basic encryption tool. That let you encrypt your files and keep them safe.
+Is a basic encryption tool, That let you encrypt your files and keep them safe.
 plus you don't have to be admin to install this program.
 
 # How do i install the tool
@@ -10,7 +10,7 @@ and go the install program and click on Setup.exe
 Go setting > apps > click on Encrypter and then click uninstall
 
 # Notes
-This is a Windows program and will not run on Liunx or Mac.
+This is a Windows program and will not run on Liunx or Mac,
 there are lods of other programs for other OS.
 
 # Bugs Fixed
@@ -34,12 +34,12 @@ there are lods of other programs for other OS.
 
 # Made by NE1W01F
 I am a basic Windows devloper trying to get a foot in IT
-if you have a project that you would like me to help you
+if you have a project, that you would like me to help you
 on please contact me at hackerwolf119@hotmail.com.
 
 Please note that i ant that good as i have only just started
 learning C# 2 months a go. I prefer to work with a team as i
-can learn off them and get better at programming and making
+can learn off them, and get better at programming and making
 software.
 
 # Peope who helped
