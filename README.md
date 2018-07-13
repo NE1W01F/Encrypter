@@ -30,6 +30,7 @@ there are lods of other programs for other OS.
 - Added Icon
 - Bottons that open a file selector
 - DLL (thanks to Adam Baker)
+- Added Ads
 
 # Made by NE1W01F
 I am a basic Windows devloper trying to get a foot in IT
