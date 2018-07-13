@@ -15,7 +15,13 @@ namespace Encrypter
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            //Updates();
             Application.Run(new Form_Application());
+        }
+
+        public static void Updates()
+        {
+            // Update code coming soon.
         }
     }
 }

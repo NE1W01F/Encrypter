@@ -1,5 +1,6 @@
 using Encrypter.Core;
 using System;
+using System.Diagnostics;
 using System.IO;
 using System.Windows.Forms;
 
@@ -17,7 +18,7 @@ namespace Encrypter
             string username = Environment.UserName;
             if (File.Exists("C:\\Users\\" + username + "\\AppData\\accept.txt"))
             {
-
+                Process.Start("http://zipansion.com/qKCk");
             }
             else
             {
