@@ -38,7 +38,7 @@ if you have a project that you would like me to help you
 on please contact me at hackerwolf119@hotmail.com.
 
 Please note that i ant that good as i have only just started
-learning C# 4 weeks a go. I prefer to work with a team as i
+learning C# 2 months a go. I prefer to work with a team as i
 can learn off them and get better at programming and making
 software.
 
