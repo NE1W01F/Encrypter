@@ -64,7 +64,7 @@
             this.label1.TabIndex = 2;
             this.label1.Text = " Copyright © NE1W01F 2018";
             // 
-            // Form2
+            // Form_Information
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -73,7 +73,7 @@
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.button1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "Form2";
+            this.Name = "Form_Information";
             this.Text = "Infomation";
             this.ResumeLayout(false);
             this.PerformLayout();

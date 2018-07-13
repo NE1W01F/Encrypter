@@ -81,7 +81,7 @@ namespace Encrypter
                         InputFileName = openFileDialog.FileName,
                         OutputFileName = $"{openFileDialog.FileName}.cry"
                     }).Encrypt();
-                    
+                    File.Delete(openFileDialog.FileName);
                 }
             }
             catch (Exception exception)
