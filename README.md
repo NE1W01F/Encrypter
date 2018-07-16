@@ -11,7 +11,7 @@ Go setting > apps > click on Encrypter and then click uninstall
 
 # Notes
 This is a Windows program and will not run on Liunx or Mac,
-there are lods of other programs for other OS.
+there are loads of other programs for other OS.
 
 # Bugs Fixed
 
