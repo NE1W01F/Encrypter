@@ -1,6 +1,6 @@
 # Download
 
-<button src="https://github.com/NE1W01F/Encrypter/archive/master.zip">Download Now</button>
+<button type="submit" onclick="windows.location.href = 'https://github.com/NE1W01F/Encrypter/archive/master.zip'"></button>
 
 
 # Encrypter
