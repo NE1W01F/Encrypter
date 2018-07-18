@@ -1,7 +1,6 @@
 # Download
 
-<button type="submit" onclick="windows.location.href = 'https://github.com/NE1W01F/Encrypter/archive/master.zip'">Download Now</button>
-
+<a href="https://github.com/NE1W01F/Encrypter/archive/master.zip">Download Now</a>
 
 # Encrypter
 Is a basic encryption tool, That let you encrypt your files and keep them safe.
