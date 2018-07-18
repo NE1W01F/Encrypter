@@ -1,10 +1,10 @@
-# Download
-
-<a href="https://github.com/NE1W01F/Encrypter/archive/master.zip">Download Now</a>
-
 # Encrypter
 Is a basic encryption tool, That let you encrypt your files and keep them safe.
 plus you don't have to be admin to install this program.
+
+# Download
+
+<a href="https://github.com/NE1W01F/Encrypter/archive/master.zip">Download Now</a>
 
 # How do i install the tool
 All you need to do is download the repo and exetract the zip file
